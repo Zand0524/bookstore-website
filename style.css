@@ -1,0 +1,508 @@
+/* General Reset to Ensure Consistent Styles Across Browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fff7ee;
+}
+
+/* Header Styling */
+header {
+    color: #131C26;
+    padding: 20px 0;
+    text-align: center;
+
+}
+
+header img{
+    max-width: 150px;
+    height: auto;
+}
+
+/* Full Menu Styling */
+#fullmenu {
+    display: flex;
+    background-color: #131C26;
+    padding: 1px;
+}
+
+#fullmenu ul {
+    display: flex;
+    width: 100%;
+    /* Ensures the list fills the parent container */
+}
+
+#fullmenu li {
+    margin: 0;
+    /* Ensure no margin between list items to make the backgroundcolor without breaks */
+    flex: 1;
+}
+
+#fullmenu li a {
+    color: #fff7ee;
+    display: flex;
+    justify-content: center; /*Controls Width Centering */
+    align-items: center; /* Controls Height centering */
+    text-decoration: none;
+    background-color: #2E4057;
+    height: 100%;
+}
+
+#fullmenu li a:hover {
+    background-color: #5e85b8;
+}
+
+
+/* Burger Menu Logo Styling */
+#burgermenu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+    cursor: pointer;
+    /* Ensures it looks clickable */
+}
+
+/* Wrapper to keep the hover active */
+#burgerwrapper {
+    position: relative;
+}
+
+/* Burger Menu Dropdown Style */
+#burgermenulinks {
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style-type: none;
+    text-align: center;
+    padding: 10px 0;
+    white-space: nowrap;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+/* Show the dropdown when the wrapper is hovered */
+#burgerwrapper:hover #burgermenulinks {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling the links inside the dropdown */
+#burgermenulinks a {
+    color: #131C26;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+}
+
+#burgermenulinks a:hover {
+    background-color:#2E4057;
+    color:#fff7ee;
+    border-radius: 5px;
+}
+
+/* Mobile-first layout */
+@media all and (max-width: 480px) {
+    .container {
+        display: flex;
+        flex-direction: column; /* Stack items vertically by default */
+        width: 100%;
+        /* Boxes will take up the full width in smaller screens */
+        padding: 10px;
+    }
+
+    
+    .box {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 20px;
+    }
+
+    #fullmenu{
+        display: none;
+    } 
+
+
+}
+
+/* Tablet layout (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack items vertically */
+        padding: 20px;
+        align-items: center;
+    }
+
+         .box {
+             width: 100%;
+             /* Make sure items stretch the full width */
+             margin-bottom: 20px; /*adds a bit of space between boxes */
+         }
+        
+    #burgermenu{
+        display: none;
+    }
+  
+}
+
+/* Desktop layout (769px and up) */
+@media (min-width: 769px) {
+    .container {
+        flex-direction: row; /* Align items side by side in a row */
+        justify-content: space-between;
+        max-width: 1200px; /* Optionally caps the max width of the container*/
+        margin: 0 auto; /* Centers the container on larger screens*/
+        align-items: center;
+    }
+
+    .box {
+        width: 20%; /* Sets fixed width for boxes on larger screens*/
+    }
+
+    #burgermenu{
+        display: none;
+    }
+}
+
+/* Additional Header styling choices */
+header h1 {
+    font-size: 2em;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #131C26;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff7ee;
+    color: #131C26;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Main Container Styling */
+#maincontainer {
+
+    padding: 20px;
+    max-width: 1200px;
+    /* Optional: limit the width of your container */
+    margin: 0 auto;
+    /* Center the container */
+}
+
+/* Last Paragraph Spacing Styling */
+#lastp {
+    margin-bottom: 15px;
+}
+
+#perklist{
+    padding-left: 20px;
+    /* Adds padding to the left side of the list */
+    margin-left: 0;
+    /* Removes any default margin */
+    list-style-position: inside;
+    /* Keeps bullet points inside the padding */
+
+}
+
+#hoursofoperation {
+    display: flex;
+    text-decoration: underline;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 20px;
+    /* Adds space before the Hours of Operation */
+}
+
+#hoursofoperationlist {
+    list-style-position: inside;
+    padding-left: 0;
+    text-align: left;
+    /* Align text inside the list to the left */
+    margin: 0 auto;
+    /* Center the whole list block trick by making the margin
+    on left and right side equal to 0 */
+    width: fit-content;
+    /* Ensures the list width adjusts based on content */
+    margin-bottom: 20px;
+}
+
+/* Contact Form Styling */
+#contactform {
+    width: 100%;
+    max-width: 1200px;
+    /* Adjust the max-width of the contact form container */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff7ee;
+    border: 2px solid #C7B65E;
+    border-radius: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#contactform label {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #131C26;
+    display: block;
+    text-align: center;
+    /* Ensure the label is on its own line */
+}
+
+#contactform input,
+#contactform textarea {
+    width: 50%;
+    /* This makes it take up 2/3 of the webpage width */
+    max-width: 1000px;
+    /* Optional max-width to prevent it from getting too wide on large screens */
+    padding: 10px;
+    border: 2px solid #131C26;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #131C26;
+    margin: 0 auto;
+    /* Centers the inputs horizontally */
+}
+
+#contactform textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+
+/* Submit Button */
+#contactform button {
+    display: block;
+    margin: 20px auto;
+    background-color: #2E4057;
+    color: #fff7ee;
+    padding: 10px 20px;
+    border: 2px solid #C7B65E;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+#contactform button:hover {
+    background-color: #5e85b8;
+}
+
+#blockquote{
+    font-size: 1.2em;
+    font-weight: bold;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 75%;
+    padding-top: 15px;
+    margin: 0px auto;
+}
+
+#citation {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+/* Footer Styling */
+footer {
+    color:#131C26;
+    padding: 20px;
+    text-align: center;
+}
+
+footer form {
+    margin-bottom: 20px;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column
+}
+
+footer nav a {
+    color:#131C26;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+/* Form Styling */
+form input,
+form textarea,
+form button {
+    padding: 10px;
+    margin-bottom: 10px;
+    color:#131C26;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form input {
+    border: 2px solid #131C26;
+    /* Specify the border */
+    background-color: transparent;
+    /* Make the background transparent */
+    padding: 10px;
+    color: #131C26;
+    width: 100%;
+    max-width: 300px;
+    /* Control the input's width */
+}
+
+/* Adjust placeholder styling */
+form input::placeholder {
+    color: #131C26;
+    opacity: 1;
+    /* Make sure it's fully visible */
+}
+
+form button {
+    background-color: #2E4057;
+    text-decoration: underline;
+    border: 2px solid #C7B65E;
+    /* Adjust border thickness */
+    color:#fff7ee;
+    cursor: pointer;
+    width: auto;
+}
+
+form button:hover {
+    background-color: #5e85b8;
+}
+
+/* Product Grid Styling */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-bottom: 40px;
+}
+
+/* Products Styling */
+#products {
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
+.product-item {
+    background-color: #fff7ee;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: -15px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.product-item p {
+    margin: 15px 0;
+    font-size: 1.1em;
+}
+
+.product-item button {
+    margin-top: -20px;
+    background-color: #2E4057;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.product-item button:hover {
+    background-color: #5e85b8;
+}
+
+#viewCartBtn {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 20px;
+    border: 2px solid #131C26;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+#viewCartBtn:hover {
+    font-weight: bold;
+    background-color:#C7B65E;
+    color:#131C26
+}
+
+
+
+
+
+/* This is a test below: Flex Box. Flx with containter. Then all items 
+within the container are flex horizontally. the .box is a class, so showing
+style common to all. the #box1 is name of each box for specific styling. We
+use . when we are dealing with a class. We have a container and box class,
+so we use .box and .container for styling. When we use a specific element,
+we use # and the id name. #box1, #box2 .box, .container */
+
+
+
+#box1{
+    background-color: rgb(205, 169, 126);
+}
+
+#box2{
+    background-color: rgb(0, 255, 110);
+}
+
+#box3{
+    background-color: rgb(255, 0, 0);
+}
+
+#box4{
+    background-color: rgb(220, 10, 220);
+}
+
+[href] { text-decoration: underline;}
