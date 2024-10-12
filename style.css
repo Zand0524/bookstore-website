@@ -499,6 +499,7 @@ form button:hover {
 
 /* General Cart Popup Styling */
 .cart-popup {
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -509,7 +510,7 @@ form button:hover {
     border: 2px solid #2E4057;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-    z-index: 1001;
+    z-index: 1000;
     text-align: left;
     width: auto;
     white-space: nowrap;

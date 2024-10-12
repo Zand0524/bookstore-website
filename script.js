@@ -13,6 +13,60 @@ document.addEventListener("DOMContentLoaded", function () {
     cartPopup.classList.add('cart-popup');
     document.body.appendChild(cartPopup);
 
+
+    // Check if the popup has already been shown
+    if (!sessionStorage.getItem("popupShown")) {
+        // Show the popup and overlay after 3 seconds
+        setTimeout(function () {
+            overlay.classList.add("show");
+            popup.classList.add("show");
+        }, 3000);
+    }
+
+    // Close the popup and overlay when the close button is clicked
+    closeButton.addEventListener("click", function () {
+        overlay.classList.remove("show");
+        popup.classList.remove("show");
+        sessionStorage.setItem("popupShown", "true"); // Mark popup as shown
+    });
+
+    // Handle form submission
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the form from actually submitting
+        const email = document.getElementById("popup-email").value;
+
+        // Simple validation to check if email is entered
+        if (email) {
+            // Display a "Thank you" message
+            alert("Thank you for subscribing!");
+
+            // Close the popup and overlay after subscribing
+            overlay.classList.remove("show");
+            popup.classList.remove("show");
+            sessionStorage.setItem("popupShown", "true"); // Mark popup as shown
+        } else {
+            alert("Please enter a valid email address.");
+        }
+    });
+
+    // Handle form submission for the footer form
+    footerForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent actual form submission
+        const email = document.querySelector("#subscribeForm input[type='email']").value;
+
+        // Simple validation to check if email is entered
+        if (email) {
+            alert("Thank you for subscribing!");
+
+            //Reset the form after displaying thank you message
+            footerForm.reset();
+            // You can add any additional logic here, such as clearing the form
+        } else {
+            alert("Please enter a valid email address.");
+        }
+    });
+
+
     // Function to show an alert
     function showAlertMessage(message) {
         alert(message);
