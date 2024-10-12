@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,6 @@
         <img src="assets/images/client-logo.png" alt="Book Haven Bookstore Logo">
         <h1>Book Haven Bookstore</h1>
         <nav>
-    
             <div id="fullmenu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -22,9 +22,8 @@
                     <li><a href="cust.html">Customer Testimonials</a></li>
                 </ul>
             </div>
-    
+
             <nav>
-    
                 <div id="burgerwrapper">
                     <button id="burgermenu">
                         <svg xmlns="http://www.w3.org/2000/svg" height="2.0em" viewBox="0 0 448 512">
@@ -34,7 +33,6 @@
                                     17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 
                                     0 32 14.3 32 32z" />
                         </svg>
-    
                     </button>
                     <ul id="burgermenulinks">
                         <li><a href="index.html">Home</a></li>
@@ -43,95 +41,108 @@
                         <li><a href="cust.html">Customer Testimonials</a></li>
                     </ul>
                 </div>
-    
             </nav>
-    
-    
         </nav>
     </header>
 
+    <!-- Cart buttons -->
+     <div class="cart-btn-container">
+    <button id="viewCartBtn" class="cart-btn">View Shopping Cart</button>
+    <button id="clearCartBtn" class="cart-btn">Clear Cart</button>
+    <button id="processOrderBtn" class="cart-btn" >Process Order</button>
+    </div>
 
-        <button id="viewCartBtn">View Shopping Cart</button>
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Our Products</h2>
 
-        <!-- Bestseller Book Selection -->
-
-        <section id="products">
-            <h2>Our Products</h2>
-        
-            <h3>Bestsellers</h3>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="assets/images/Client3_Book1.png" alt="Cover of Brie Mine 4Ever book">
-                    <p>Brie Mine 4Ever</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="assets/images/Client3_Book2.png" alt="Cover of Glory Riders, a book about bikers">
-                    <p>Glory Riders</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="assets/images/Client3_Book3.png" alt="Cover of Sorcerer's Shadowed Chronicles, a fantasy book">
-                    <p>Sorcerer's Shadowed Chronicles</p>
-                    <button>Add to Cart</button>
-                </div>
+        <h3>Bestsellers</h3>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="assets/images/Client3_Book1.png" alt="Cover of Brie Mine 4Ever book">
+                <p>Brie Mine 4Ever</p>
+                <button class="add-to-cart" data-product="Brie Mine 4Ever">Add to Cart</button>
             </div>
-        
-            <h3>Our Best Magazines</h3>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="assets/images/Client3_Magazine1.png" alt="Ball Magazine, a Magazine about Pickleball">
-                    <p>Ball Magazine</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="assets/images/Client3_Magazine2.png" alt="Travel Magazine, a magazine for travelers.">
-                    <p>Travel Magazine</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="assets/images/Client3_Magazine3.png" alt="Eat Magazine, a magazine for foodies.">
-                    <p>Eat Magazine</p>
-                    <button>Add to Cart</button>
-                </div>
+            <div class="product-item">
+                <img src="assets/images/Client3_Book2.png" alt="Cover of Glory Riders, a book about bikers">
+                <p>Glory Riders</p>
+                <button class="add-to-cart" data-product="Glory Riders">Add to Cart</button>
             </div>
-        
-            <h3>Our Best Gifts</h3>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="assets/images/Client3_ToteBag.png"
-                        alt="Canvas tote bag with lettering that says All I Do is READ READ READ">
-                    <p>"All I do is READ READ READ" Canvas Tote Bag</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="assets/images/Client3_Notebook.png"
-                        alt="A notebook with text on the cover that says Book Haven Bookstore">
-                    <p>Book Haven Bookstore Notebook</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product-item">
-                    <img src="assets/images/Client3_Stickers.png"
-                        alt="A set of four Book Haven Bookstore stickers that promote reading">
-                    <p>Book Haven Bookstore Stickers (4 pack)</p>
-                    <button>Add to Cart</button>
-                </div>
+            <div class="product-item">
+                <img src="assets/images/Client3_Book3.png"
+                    alt="Cover of Sorcerer's Shadowed Chronicles, a fantasy book">
+                <p>Sorcerer's Shadowed Chronicles</p>
+                <button class="add-to-cart" data-product="Sorcerer's Shadowed Chronicles">Add to Cart</button>
             </div>
-        </section>
+        </div>
 
+        <h3>Our Best Magazines</h3>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="assets/images/Client3_Magazine1.png" alt="Ball Magazine, a Magazine about Pickleball">
+                <p>Ball Magazine</p>
+                <button class="add-to-cart" data-product="Ball Magazine">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="assets/images/Client3_Magazine2.png" alt="Travel Magazine, a magazine for travelers.">
+                <p>Travel Magazine</p>
+                <button class="add-to-cart" data-product="Travel Magazine">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="assets/images/Client3_Magazine3.png" alt="Eat Magazine, a magazine for foodies.">
+                <p>Eat Magazine</p>
+                <button class="add-to-cart" data-product="Eat Magazine">Add to Cart</button>
+            </div>
+        </div>
 
-    </main>
+        <h3>Our Best Gifts</h3>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="assets/images/Client3_ToteBag.png"
+                    alt="Canvas tote bag with lettering that says All I Do is READ READ READ">
+                <p>"All I do is READ READ READ" Canvas Tote Bag</p>
+                <button class="add-to-cart" data-product="Canvas Tote Bag">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="assets/images/Client3_Notebook.png"
+                    alt="A notebook with text on the cover that says Book Haven Bookstore">
+                <p>Book Haven Bookstore Notebook</p>
+                <button class="add-to-cart" data-product="Book Haven Notebook">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="assets/images/Client3_Stickers.png"
+                    alt="A set of four Book Haven Bookstore stickers that promote reading">
+                <p>Book Haven Bookstore Stickers (4 pack)</p>
+                <button class="add-to-cart" data-product="Stickers (4 pack)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <form>
-        <label for="email">Subscribe to our Newsletter</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-    </form>
-    <nav>
-        <a href="https://www.facebook.com">Facebook</a> |
-        <a href="https://www.x.com">X</a>
-    </nav>
-</footer>
+    <footer>
+        <form id="subscribeForm">
+            <label for="email">Subscribe to our Newsletter</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <nav>
+            <a href="https://www.facebook.com">Facebook</a> |
+            <a href="https://www.x.com">X</a>
+        </nav>
+    </footer>
+
+    <!-- Popup Banner and Overlay -->
+    <div id="overlay" class="hidden"></div>
+    <div id="popup" class="hidden">
+        <p>Get 15% off today by joining our newsletter!</p>
+        <form id="newsletter-form">
+            <input type="email" id="popup-email" placeholder="Enter your email address" required>
+            <button type="submit">Join Now</button>
+            <button type="button" id="close-popup">X</button>
+        </form>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
 </body>
+
 </html>

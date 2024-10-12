@@ -70,7 +70,7 @@
             <h2>Get in touch with us!</h2>
             <p>If you need a custom order, had questions, or would like to offer feedback, please fill out the form below.</p>
         
-            <form>
+            <form id="formSubmission">
                 <div class="form-group">
                     <label for="full_name">Full Name:</label>
                     <input type="text" id="full_name" name="full_name" required>
@@ -88,12 +88,31 @@
         
                 <button type="submit">Submit</button>
             </form>
+
+            <script>
+                document.getElementById('formSubmission').addEventListener('submit', function (event) {
+                    // Prevent the form from submitting right away
+                    event.preventDefault();
+
+                    const fullName = document.getElementById('full_name').value;
+                    const email = document.getElementById('email').value;
+
+                    // Check if both fields are filled
+                    if (fullName && email) {
+                        alert('Thank you for your message!');
+                        // Allow the form to submit after showing the alert
+                        event.target.submit();
+                    } else {
+                        alert('Please fill out your name and email.');
+                    }
+                });
+            </script>
         </section>
     </main>
     
 
     <footer>
-        <form>
+        <form id="subscribeForm">
             <label for="email">Subscribe to our Newsletter</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
             <button type="submit">Subscribe</button>
@@ -103,6 +122,21 @@
             <a href="https://www.x.com">X</a>
         </nav>
     </footer>
+    
+    <!-- Popup Banner and Overlay -->
+    <div id="overlay" class="hidden"></div>
+    <div id="popup" class="hidden">
+        <p>Get 15% off today by joining our newsletter!</p>
+        <form id="newsletter-form">
+            <input type="email" id="popup-email" placeholder="Enter your email address" required>
+            <button type="submit">Join Now</button>
+            <button type="button" id="close-popup">X</button>
+        </form>
+    </div>
+    
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+
 
     
 </body>

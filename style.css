@@ -460,22 +460,212 @@ form button:hover {
     background-color: #5e85b8;
 }
 
-#viewCartBtn {
+
+.cart-btn-container {
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end; /* Aligns the buttons to the right */
+    gap: 2px;
+    padding-right: 10px;
+    margin-top: -5px;
+}
+
+/* General Button Styling (for View Cart, Clear Cart, Process Order) */
+.cart-btn {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color:#2E4057;
+    color:#fff7ee;
+    cursor: pointer;
     text-align: center;
-    padding: 10px 20px;
-    border: 2px solid #131C26;
+}
+
+/* Scoot Cart Button left using Pseudo Class */
+.cart-btn:first-child {
     margin-left: 20px;
-    margin-bottom: 15px;
 }
 
-#viewCartBtn:hover {
+.cart-btn:hover {
     font-weight: bold;
-    background-color:#C7B65E;
-    color:#131C26
+    background-color: #C7B65E;
+    color: #131C26;
 }
 
+.added-to-cart {
+    background-color: #5e85b8;
+    /* Change color to give feedback */
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* General Cart Popup Styling */
+.cart-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    /* Uniform white background */
+    padding: 20px;
+    border: 2px solid #2E4057;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    text-align: left;
+    width: auto;
+    white-space: nowrap;
+    /* Prevent text wrapping */
+    max-width: 90%;
+    /* Prevent excessive width on larger screens */
+}
+
+/* Paragraph styling for cart items */
+.cart-popup p {
+    font-size: 18px;
+    color: #2E4057;
+    /* Cart text color */
+    margin-bottom: 10px;
+    background-color:antiquewhite;
+    /* Ensures the background is consistent */
+    padding: 5px;
+    /* Adds padding for better spacing */
+}
+
+/* Close Cart Button Styling */
+.cart-popup {
+    padding: 12px 30px;
+    background-color: #5e85b8;
+    color: #fff7ee;
+    text-align: center;
+    border: none;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    min-width: 300px;
+    width: auto;
+}
+
+.close-cart-btn {
+    padding: 12px 30px;
+    background-color: #5e85b8;
+    color: #fff7ee;
+    text-align: center;
+    border: none;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    max-width: 150px;
+    width: auto;
+}
+
+.cart-popup .close-cart-btn:hover {
+    background-color: #2E4057;
+    /* Darker color on hover */
+}
+
+
+
+/* Style for the background overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent black */
+    z-index: 999;
+    display: none;
+    /* Hidden initially */
+}
+
+/* Style for the popup banner */
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: antiquewhite;
+    padding: 30px;
+    border: 5px solid #C7B65E;
+    border-radius: 12px;
+    z-index: 1000;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    /* Hidden initially */
+    width: 400px;
+    height: auto;
+    text-align: center;
+}
+
+/* Ensure no white boxes behind the form so a reset */
+#popup form {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+/* Adjusted styles for input and button */
+
+#popup p {
+    margin-bottom: 20px;
+    font-family:'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-size: 28px;
+    color:#131C26;
+    padding: 0;
+    background-color: transparent;
+}
+
+/* Typing Submission Box */
+#popup input[type="email"] {
+    padding: 10px;
+    width: 90%;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color:#131C26;
+    border: 2px solid #131C26;
+}
+
+/* Join Button Styling */
+#popup button {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    background-color:#2E4057;
+    color:antiquewhite;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#popup button:hover {
+    background-color: #5e85b8;
+}
+
+/* Close out X Button */
+#popup #close-popup {
+    background-color:transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+    top: 0px;
+    right: -10px;
+}
+
+/* Utility class to show the popup and overlay */
+.show {
+    display: block !important;
+}
+
+.hidden {
+    display: none;
+}
 
 
 
